@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Msihle's Driving School - Learn to Drive with Confidence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden; /* Prevent horizontal scroll from animations */
+            /* --- New Background Image --- */
+            /* Using the office photo with a light grey overlay */
+            background-image: linear-gradient(rgba(243, 244, 246, 0.92), rgba(243, 244, 246, 0.92)), url('images/contact.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Creates a nice parallax-like effect */
+            /* --- End New Background Image --- */
+        }
+        .hero-bg {
+            /* Using one of the uploaded fleet photos as the background */
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('1000326754.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .cta-button {
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        /* --- Animation CSS --- */
+        .animate-fade-in,
+        .animate-slide-in-left,
+        .animate-slide-in-right {
+            opacity: 0;
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .animate-fade-in {
+            transform: translateY(20px);
+        }
+        .animate-slide-in-left {
+            transform: translateX(-50px);
+        }
+        .animate-slide-in-right {
+            transform: translateX(50px);
+        }
+        .is-visible {
+            opacity: 1;
+            transform: translateY(0) translateX(0);
+        }
+        .course-card:nth-child(2) {
+            transition-delay: 0.1s;
+        }
+        .course-card:nth-child(3) {
+            transition-delay: 0.2s;
+        }
+        /* --- End of Animation CSS --- */
+    </style>
+</head>
+<!-- Removed bg-gray-100, background is now handled by the <style> tag -->
+<body class="text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-red-600">
+                <i class="fas fa-car-side mr-2"></i>Msihle's Driving School
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#courses" class="text-gray-600 hover:text-red-600">Courses</a>
+                <a href="#about" class="text-gray-600 hover:text-red-600">About Us</a>
+                <a href="#contact" class="text-gray-600 hover:text-red-600">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-gray-600 hover:text-red-600 focus:outline-none">
+                    <i class="fas fa-bars fa-lg"></i>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#courses" class="block py-2 px-4 text-sm hover:bg-red-500 hover:text-white">Courses</a>
+            <a href="#about" class="block py-2 px-4 text-sm hover:bg-red-500 hover:text-white">About Us</a>
+            <a href="#contact" class="block py-2 px-4 text-sm hover:bg-red-500 hover:text-white">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg text-white">
+        <div class="container mx-auto px-6 py-24 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">Your Journey to a Driver's License Starts Here</h1>
+            <p class="text-lg md:text-xl mb-8">Professional, affordable, and reliable driving lessons for all codes.</p>
+            <a href="#contact" class="bg-red-600 text-white font-bold py-3 px-8 rounded-full cta-button">
+                Book Your Lesson Today
+            </a>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <!-- This section is now "transparent", showing the new body background -->
+    <section id="courses" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 animate-fade-in">Our Driving Courses</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Code 08 -->
+                <div class="course-card bg-white rounded-lg shadow-lg p-8 transform hover:scale-105 transition-transform duration-300 animate-fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-red-500 text-white rounded-full h-12 w-12 flex items-center justify-center font-bold text-xl">
+                            08
+                        </div>
+                        <h3 class="text-2xl font-bold ml-4">Code 08 License</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Perfect for light motor vehicles. Get comfortable behind the wheel of a car with our expert instructors.</p>
+                    <div class="text-4xl font-bold text-red-600">R2500</div>
+                    <p class="text-gray-500 text-sm">Full Course</p>
+                </div>
+
+                <!-- Code 10 -->
+                <div class="course-card bg-white rounded-lg shadow-lg p-8 transform hover:scale-105 transition-transform duration-300 animate-fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-red-500 text-white rounded-full h-12 w-12 flex items-center justify-center font-bold text-xl">
+                           10
+                        </div>
+                        <h3 class="text-2xl font-bold ml-4">Code 10 License</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">For heavy vehicles up to 16,000 kg. Ideal for small trucks and commercial delivery vehicles.</p>
+                    <div class="text-4xl font-bold text-red-600">R2500</div>
+                     <p class="text-gray-500 text-sm">Full Course</p>
+                </div>
+
+                <!-- Code 14 -->
+                <div class="course-card bg-white rounded-lg shadow-lg p-8 transform hover:scale-105 transition-transform duration-300 animate-fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-red-500 text-white rounded-full h-12 w-12 flex items-center justify-center font-bold text-xl">
+                           14
+                        </div>
+                        <h3 class="text-2xl font-bold ml-4">Code 14 License</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">The ultimate license for extra-heavy vehicles and trucks. Open up your career opportunities.</p>
+                    <div class="text-4xl font-bold text-red-600">R4000</div>
+                     <p class="text-gray-500 text-sm">Full Course</p>
+                </div>
+            </div>
+            
+            <!-- Styled Image under Courses -->
+            <div class="mt-16 text-center animate-fade-in">
+                <!-- Corrected image path -->
+                <img src="images/code14.jpg" 
+                     alt="Code 14 Truck for driving lessons" 
+                     class="rounded-xl shadow-2xl w-full max-w-3xl mx-auto h-auto object-cover border-4 border-red-500 hover:scale-105 transition-transform duration-300"
+                     onerror="this.onerror=null;this.src='https://placehold.co/600x300/e2e8f0/4a5568?text=Code+14+Truck';">
+                <!-- Corrected caption -->
+                <p class="text-gray-600 mt-4 italic">Our powerful Code 14 truck — ready to get you licensed!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 animate-fade-in">Why Choose Msihle's?</h2>
+            <!-- Corrected layout: The image and text are now siblings -->
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <!-- Image Column -->
+                <div class="md:w-1/2 animate-slide-in-left">
+                    <div class="text-center">
+                        <!-- Corrected image path -->
+                        <img src="images/about.jpg" 
+                             alt="Msihle's Driving School vehicle fleet" 
+                             class="rounded-xl shadow-2xl w-full max-w-lg mx-auto h-auto object-cover border-4 border-red-500 hover:scale-105 transition-transform duration-300"
+                             onerror="this.onerror=null;this.src='https://placehold.co/600x300/e2e8f0/4a5568?text=Our+Fleet';">
+                        <!-- Corrected caption -->
+                        <p class="text-gray-600 mt-4 italic">Our fleet of Code 8, 10, and 14 vehicles.</p>
+                    </div>
+                </div>
+                <!-- Text Column -->
+                <div class="md:w-1/2 animate-slide-in-right">
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-red-500 fa-2x mt-1"></i>
+                            <div class="ml-4">
+                                <h4 class="font-bold text-lg">Experienced Instructors</h4>
+                                <p class="text-gray-600">Our team is made of certified and patient instructors dedicated to your success.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-red-500 fa-2x mt-1"></i>
+                            <div class="ml-4">
+                                <h4 class="font-bold text-lg">Affordable Prices</h4>
+                                <p class="text-gray-600">We offer competitive pricing and special packages to make learning to drive accessible for everyone.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-red-500 fa-2x mt-1"></i>
+                            <div class="ml-4">
+                                <h4 class="font-bold text-lg">Flexible Scheduling</h4>
+                                <p class="text-gray-600">We understand you have a busy life. We offer flexible lesson times to fit your schedule.</p>
+                            </div>
+                        </div>
+                         <div class="flex items-start">
+                            <i class="fas fa-check-circle text-red-500 fa-2x mt-1"></i>
+                            <div class="ml-4">
+                                <h4 class="font-bold text-lg">Multiple Locations</h4>
+                                <p class="text-gray-600">With offices in Vosloorus, Germiston, and Tsakane, we're conveniently located near you.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <!-- Removed bg-gray-100 to show the new body background -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 animate-fade-in">Get In Touch</h2>
+            <div class="bg-white rounded-lg shadow-xl p-8 md:p-12 animate-fade-in">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <!-- Contact Info & Offices -->
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6">Contact Details</h3>
+                        <div class="space-y-4 text-lg">
+                            <p><i class="fas fa-phone-alt text-red-500 mr-3"></i> <a href="tel:0848989862" class="hover:text-red-600">084 898 9862</a></p>
+                              <!--<p><i class="fab fa-whatsapp text-green-500 mr-3"></i> <a href="https://wa.me/2848989862" class="hover:text-red-600" target="_blank">084 898 9862</a></p>-->
+                            <p><i class="fab fa-whatsapp text-green-500 mr-3"></i> <a href="https://wa.me/27763500803" class="hover:text-red-600" target="_blank">076 350 0803</a></p>
+                            <p><i class="fas fa-envelope text-red-500 mr-3"></i> <a href="mailto:msihlez326@gmail.com" class="hover:text-red-600">msihlez326@gmail.com</a></p>
+                        </div>
+                        
+                         <!-- Styled Image under Contact-->
+                        <div class="mt-8 text-center"> <!-- Changed from mt-16 -->
+                            <!-- Corrected image path -->
+                            <img src="images/contact.jpg" 
+                                 alt="Msihle's Driving School Office Front" 
+                                 class="rounded-xl shadow-2xl w-full max-w-lg mx-auto h-auto object-cover border-4 border-red-500 hover:scale-105 transition-transform duration-300"
+                                 onerror="this.onerror=null;this.src='https://placehold.co/600x300/e2e8f0/4a5568?text=Our+Office';">
+                            <!-- Corrected caption -->
+                            <p class="text-gray-600 mt-4 italic">Visit one of our convenient office locations!</p>
+                        </div>
+
+                        <hr class="my-8">
+                        <h3 class="text-2xl font-bold mb-6">Our Offices</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-semibold"><i class="fas fa-map-marker-alt text-red-500 mr-2"></i>Vosloorus</h4>
+                                <p class="ml-6 text-gray-600">1442 Khoza Street, Nguni Section, 1475</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold"><i class="fas fa-map-marker-alt text-red-500 mr-2"></i>Germiston</h4>
+                                <p class="ml-6 text-gray-600">6559 Litchi Street, Rondebult Ext 23, 1401</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold"><i class="fas fa-map-marker-alt text-red-500 mr-2"></i>Tsakane</h4>
+                                <p class="ml-6 text-gray-600">8744 Modjadji Street, 1550</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Contact Form -->
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6">Send us a Message</h3>
+                        <form id="contact-form-element">
+                            <div class="mb-4">
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
+                                <textarea id="message" name="message" rows="6" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" required placeholder="Type your enquiry here..."></textarea>
+                            </div>
+                            <div>
+                                <button type="submit" id="whatsapp-btn" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg cta-button flex items-center justify-center">
+                                    <i class="fab fa-whatsapp mr-3 fa-lg"></i> Send via WhatsApp
+                                </button>
+                            </div>
+                            <!-- Message to user after submission -->
+                            <p id="form-feedback" class="text-green-600 mt-4 text-center"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Msihle's Driving School. All Rights Reserved.</p>
+            <p class="text-sm text-gray-400 mt-2">Website designed with a passion for driving.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Close mobile menu on link click
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Contact form WhatsApp functionality
+        const contactForm = document.getElementById('contact-form-element');
+        const feedbackEl = document.getElementById('form-feedback');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Stop the form from submitting normally
+
+            const messageInput = document.getElementById('message');
+            const message = messageInput.value;
+
+            // Simple validation check
+            let isValid = true;
+            feedbackEl.textContent = ''; // Clear previous feedback
+            feedbackEl.classList.remove('text-red-600', 'text-green-600');
+            
+            // Reset styles
+            messageInput.classList.remove('border-red-500', 'ring-red-500');
+
+             if (!message) {
+                messageInput.classList.add('border-red-500', 'ring-red-500');
+                isValid = false;
+            }
+
+            if (!isValid) {
+                feedbackEl.textContent = 'Please enter a message.';
+                feedbackEl.classList.add('text-red-600');
+                return;
+            }
+            
+            // Use the WhatsApp number from the contact details
+            const drivingSchoolNumber = '27763500803'; // South Africa country code + number without leading 0
+            
+            let whatsAppMessage = `Hello Msihle's Driving School, I have a new enquiry:\n\n${message}`;
+
+            const encodedMessage = encodeURIComponent(whatsAppMessage);
+            const whatsappUrl = `https://wa.me/${drivingSchoolNumber}?text=${encodedMessage}`;
+
+            try {
+                 // Attempt to open WhatsApp
+                window.open(whatsappUrl, '_blank');
+                
+                // Provide feedback
+                feedbackEl.textContent = "Opening WhatsApp to send your message...";
+                feedbackEl.classList.add('text-green-600');
+
+                // Clear the form
+                contactForm.reset();
+                setTimeout(() => {
+                    feedbackEl.textContent = "";
+                }, 5000); // Clear feedback message after 5 seconds
+
+            } catch (error) {
+                console.error('Failed to open WhatsApp link:', error);
+                feedbackEl.textContent = 'Failed to open WhatsApp. Please copy our number.';
+                feedbackEl.classList.add('text-red-600');
+            }
+        });
+
+        // --- Animation JavaScript ---
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1 // Trigger when 10% of the element is visible
+        });
+
+        const animatedElements = document.querySelectorAll('.animate-fade-in, .animate-slide-in-left, .animate-slide-in-right');
+        animatedElements.forEach(el => observer.observe(el));
+        // --- End of Animation JavaScript ---
+    </script>
+
+</body>
+</html>
+
